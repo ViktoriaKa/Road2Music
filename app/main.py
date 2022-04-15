@@ -8,14 +8,14 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 
 # Client Credentials should be secret
-spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='5d7d4ba5ccc1483f966f4d85b84832f3',
-                                                    client_secret='712c50b09d80457988ab0f5614928363',
+spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='*******************',
+                                                    client_secret='**********************',
                                                     redirect_uri='https://road2music.herokuapp.com/createplaylist2',
                                                     scope='playlist-modify-public'))
 
 # Spotify Environment Variables
-os.environ['SPOTIPY_CLIENT_ID'] = '5d7d4ba5ccc1483f966f4d85b84832f3'
-os.environ['SPOTIPY_CLIENT_SECRET'] = '712c50b09d80457988ab0f5614928363'
+os.environ['SPOTIPY_CLIENT_ID'] = '********************'
+os.environ['SPOTIPY_CLIENT_SECRET'] = '****************************'
 os.environ['SPOTIPY_REDIRECT_URI'] = 'https://road2music.herokuapp.com/createplaylist2' #old one: os.environ['SPOTIPY_REDIRECT_URI'] = 'http://localhost:9090'
 os.environ['SPOTIPY_CALLBACK_URL'] = 'https://road2music.herokuapp.com/'
 os.environ['SPOTIPY_FRONTEND_URI'] = 'http://localhost:300'
