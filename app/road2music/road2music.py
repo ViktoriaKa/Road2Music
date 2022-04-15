@@ -9,14 +9,13 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # API Key should be secret
-gmaps = googlemaps.Client(key='AIzaSyCqDucsKn1Q_l-4eIMelnWCC08FZP-kvPs')
-# old key: AIzaSyDpqDzBN6k9ubjx62OXAluUWHLHq4x7k-0')
+gmaps = googlemaps.Client(key='****************')
 
 
 def main2():
     # Client Credentials should be secret
-    spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='5d7d4ba5ccc1483f966f4d85b84832f3',
-                                                        client_secret='712c50b09d80457988ab0f5614928363',
+    spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='*******************',
+                                                        client_secret='**********************',
                                                         # Same as in Spotify Dashboard
                                                         redirect_uri='http://localhost:9090',
                                                         scope='playlist-modify-public'))
