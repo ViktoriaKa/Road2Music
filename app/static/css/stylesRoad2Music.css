@@ -1,0 +1,287 @@
+/* .imprtnt { color: black; font-weight: bold; } */
+
+/* everything that should be displayed as is, f.i. the cow */
+/* pre{
+  border-width: 3px;
+  border-style: solid;
+  border-color: red;
+  } */
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  font-family: sans-serif;
+  color: black;
+  background-color: white;
+  margin: 0px;
+/*padding-left: 20px; */
+  }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+
+div{
+  text-align: center;
+  }
+
+/* Style tab links */
+.tablink {
+  background-color: #F1F4F1;
+  color: black;
+  float: left;
+  border:0px solid black;
+  outline: 0px solid black;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+  }
+
+.tablink2 {
+  background-color: white;
+  color: black;
+  float: left;
+  border:0px solid black;
+  outline: 0px solid black;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+  }
+
+.submitbutton{
+  margin-right: 8px;
+  }
+
+/* style of link */
+a:link {
+  color: black;
+  text-decoration: none;
+  }
+
+/* style of visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+  }
+
+/* style of tab when hovering with mouse */
+.tablink:hover {
+  background-color: silver;
+  color: white;
+  }
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  }
+/*
+#Home {background-color: purple;}
+#CreatePlaylist {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;} */
+
+
+/* style of description */
+/* .description {
+  width: 490px;
+  padding: 15px;
+  font-size: 13px;
+  font-weight: 100;
+  font-family: Verdana;
+  text-align: center;
+  position: center;
+  top: -10px;
+  border-top: dotted 1px rgb(180, 180, 180);
+  border-bottom: dotted 1px rgb(180, 180, 180);
+  margin-left: auto;
+  margin-right: auto;
+  } */
+
+/*style of content */
+.headline {
+  font-size: 17px;
+  margin-top: 0px;
+  width: 540px;
+  position: absolute;
+  left: 50%;
+  margin-left: -270px;
+  top: 260px;
+  font-weight: bold
+  }
+
+.content {
+  margin-top: 40px;
+  width: 540px;
+  position: absolute;
+  left: 50%;
+  margin-left: -270px;
+  top: 180px;
+  top: 260px;
+  }
+
+.bold {
+  font-weight: bolder;
+  }
+
+.content #posts
+.photo #image {
+  padding: 10px;
+  position: absolute;
+  margin: auto;
+  border: 1px solid black;
+  background: white;
+  }
+
+.picture {
+  border: 1px solid silver;
+  margin: 0px 0px 0px;
+  padding: 20px;
+  }
+
+#logo{
+  animation: logoAnim 20s linear infinite;
+  z-index: -10;
+  }
+
+@keyframes logoAnim{
+  from {transform: rotateY(0deg)}
+  to {transform: rotateY(360deg)}
+  }
+
+/* frames */
+/* .outer {
+  border: 2px solid black;
+  background-color: gray;
+  padding: 15px;
+  margin: 40px;
+  }
+
+.inner {
+  border: 2px dotted black;
+  background-color: white;
+  padding: 15px;
+  margin: 15px; }
+
+.inner2 {
+  border: 2px dotted black;
+  background-color: white;
+  padding: 15px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+.outer2 {
+  border: 2px solid black;
+  background-color: gray;
+  padding: 15px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  } */
+
+.footer {
+  font-size: 11px;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 10px;
+  padding: 1rem;
+  background-color: white;
+  text-align: center;
+  color: black;
+  }
+
+.footer2 {
+  font-size: 11px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: white;
+  text-align: center;
+  color: black;
+  }
+
+  .box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  .box h2{
+    margin: 0 0 30px;
+    padding: 0px;
+    color: #fff;
+    text-align: center;
+  }
+  .box .input-box{
+    position: relative;
+  }
+  .box .input-box input{
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+  }
+  .box .input-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #fff;
+    transition: .5s;
+  }
+  .box .input-box input:focus ~ label,
+  .box .input-box input:valid ~ label{
+    top: -18px;
+    left: 0px;
+    color: #03a9f4;
+    font-size: 12px;
+  }
+  .box input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #227be3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+  }
+  .box input[type="submit"]:hover{
+    background-color: #3067b9;
+  }
+
+
+/* sources
+https://www.w3schools.com/howto/howto_js_full_page_tabs.asp
+https://stackoverflow.com/questions/34580572/center-h1-in-the-middle-of-screen
+https://www.w3schools.com/html/html_links_colors.asp
+https://www.w3schools.com/howto/howto_css_image_center.asp
+https://themesthatyoulike.tumblr.com/
+https://www.w3schools.com/html/html_favicon.asp
+*/
