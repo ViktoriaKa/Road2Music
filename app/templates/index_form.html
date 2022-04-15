@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+<body>
+  <div class="headline">
+    Create Playlist
+  </div>
+  <div class="content">
+    <form action = '/createplaylistverify' method="GET">
+      What's your origin? <br>
+        <br>
+        <input id="origin-input" type="text" name="origin" placeholder="Origin location">
+        <br>
+        <p>
+      What's your destination? <br>
+        <br>
+        <input id="destination-input" type="text" name="destination" placeholder="Destination location">
+        <br>
+        <p>
+        <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+{% endblock bodycontent %}

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Spotify Road-trip Playlist Generator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload" >
+		<!-- Wrapper -->
+			<div id="wrapper" class="fullscreen loginbg">
+				<!-- One -->
+                <section class="banner style1 orient-left content-align-left image-position-right onload-image-fade-in onload-content-fade-right">
+					<div class="content">
+                        <b><h1>Spotify Road Trip Playlist Generator</h1></b>
+                        <p class="major">Celebrate the places you pass by!</p>
+					</div>
+					<a href="{{signin_url}}" class="button big wide smooth-scroll-middle loginbtn">Sign in with spotify</a>
+                </section>
+
+				<section>
+					<a href="{{signin_url}}" class="button big wide smooth-scroll-middle loginmobile">Sign in with spotify</a>
+				</section>
+
+				<section class="wrapper style1 align-center abtsection onload-content-fade-right onload-image-fade-in" id="about">
+					<div class="inner">
+						<h2>About</h2>
+						<p></p>
+					</div>
+				</section>
+
+                <!-- Footer -->
+					<footer class="wrapper style1 align-center loginftr">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/home.main.js') }}"></script>
+	</body>
+</html>

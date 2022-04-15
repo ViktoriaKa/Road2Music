@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+<body>
+  <div class="headline">
+    Create Playlist
+  </div>
+  <div class="content">
+    Please sign in with Spotify and allow Road2Music to access your account<p>
+   <a href = {{signin_url}} <button type="submit">Spotify Login</button></a><p>
+    <p>
+    <p>
+    <p>
+</body>
+  <div class="footer2">&#169; 2022 </div>
+{% endblock bodycontent %}
+
+
+
+
+
+<!--      <form action={{signin_url}}>
+      <form action="https://accounts.spotify.com/de/authorize?client_id=5d7d4ba5ccc1483f966f4d85b84832f3&response_type=code&redirect_uri=https%3A%2F%2Froad2music.herokuapp.com%2Fcreateplaylist2&scope=playlist-modify-public&show_dialog=True">
+         <button type="submit">Spotify Login</button>
+       </form> -->
+<!-- <a href="https://accounts.spotify.com/de/authorize?response_type=code&client_id=5d7d4ba5ccc1483f966f4d85b84832f3&scope=user-read-private%20user-read-email&redirect_uri=http%3A%2F%2Flocalhost%3A9090&state=probEp6kbiamGudq" class="button">Spotify Login</a> -->
+<!--  <a href="https://accounts.spotify.com/de/authorize?response_type=code&client_id=5d7d4ba5ccc1483f966f4d85b84832f3&scope=user-read-private%20user-read-email&redirect_uri=http%3A%2F%2Flocalhost%3A9090&state=probEp6kbiamGudq"><button>Spotify Login</button></a> -->

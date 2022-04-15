@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+<body>
+  <div class="headline">
+  Create Playlist
+  </div>
+  <div class="content">
+    Creating playlist with the name "{{playlist_name}}" in your Spotify account.<p>
+    _______________________________________________________________<p>
+    Your trip will go through state xy for 00:00:00.<p>
+    Then through state xy for 00:00:00.<p>
+    And finally through state xy for 00:00:00.<p>
+    xy songs have been added to the playlist. Enjoy your trip! <p>
+    <form action="https://open.spotify.com/collection/playlists">
+       <button type="submit">Check Out the Playlist!</button>
+     </form>
+  </div>
+</body>
+{% endblock bodycontent %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+<body>
+  <div class="headline">
+    Create Playlist
+  </div>
+  <div class="content">
+    <p>
+<!--    <form> -->
+    <form action = '/submit' method="GET">
+      <p> Did you mean from {{origin}} to {{destination}}? </p>
+<!--        <input type="radio" name = "ans1" value="yes"> Yes </label>
+        <input type="radio" name = "ans2" value="no"> No </label>
+        <p>
+        <button type="button">Submit</button> -->
+
+        <button class="submitbutton" <li><a href="submit">Yes</a></li>
+        <button onclick="history.back();return false;">No</button>
+    </form>
+  </div>
+</body>
+{% endblock bodycontent %}
