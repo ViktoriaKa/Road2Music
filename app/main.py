@@ -115,7 +115,7 @@ def createplaylistverify():
 def submit_get():
     origin = session.get("origin", None)
     destination = session.get("destination")
-    playlist_name = "Road2Music - " #+ origin + " to " + destination
+    playlist_name = "Road2Music - " + str(origin) + " to " + str(destination)
     print(f"Creating playlist with the name {playlist_name} in your Spotify account.")
 #    spotify.user_playlist_create(user=spotify.me()['id'], name=playlist_name)
     # Get playlist id from previously created empty playlist by searching for the name within user's playlists
