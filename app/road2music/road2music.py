@@ -2,20 +2,22 @@ import random
 from collections import OrderedDict
 from datetime import datetime
 from time import strftime, gmtime
-
+import os
 import googlemaps
 import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # API Key should be secret
-gmaps = googlemaps.Client(key='****************')
+GMAPS_KEY = os.environ['PLACES_API']
+gmaps = googlemaps.Client(key=GMAPS_KEY)
+
 
 
 def main2():
     # Client Credentials should be secret
-    spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='*******************',
-                                                        client_secret='**********************',
+    spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIPY_CLIENT_ID'],
+                                                        client_secret=os.environ['SPOTIPY_CLIENT_SECRET'],
                                                         # Same as in Spotify Dashboard
                                                         redirect_uri='http://localhost:9090',
                                                         scope='playlist-modify-public'))

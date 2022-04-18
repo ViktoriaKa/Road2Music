@@ -8,23 +8,27 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 
 # Client Credentials should be secret
-spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='*******************',
-                                                    client_secret='**********************',
+spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=os.environ['SPOTIPY_CLIENT_ID'],
+                                                    client_secret=os.environ['SPOTIPY_CLIENT_SECRET'],
                                                     redirect_uri='https://road2music.herokuapp.com/createplaylist2',
                                                     scope='playlist-modify-public'))
 
 # Spotify Environment Variables
-os.environ['SPOTIPY_CLIENT_ID'] = '********************'
-os.environ['SPOTIPY_CLIENT_SECRET'] = '****************************'
-os.environ['SPOTIPY_REDIRECT_URI'] = 'https://road2music.herokuapp.com/createplaylist2' #old one: os.environ['SPOTIPY_REDIRECT_URI'] = 'http://localhost:9090'
-os.environ['SPOTIPY_CALLBACK_URL'] = 'https://road2music.herokuapp.com/'
-os.environ['SPOTIPY_FRONTEND_URI'] = 'http://localhost:300'
+# os.environ['SPOTIPY_CLIENT_ID'] = '********************'
+# os.environ['SPOTIPY_CLIENT_SECRET'] = '****************************'
+# os.environ['SPOTIPY_REDIRECT_URI'] = 'https://road2music.herokuapp.com/createplaylist2' #old one: os.environ['SPOTIPY_REDIRECT_URI'] = 'http://localhost:9090'
+    # os.environ['SPOTIPY_CALLBACK_URL'] = 'https://road2music.herokuapp.com/'
+# os.environ['SPOTIPY_FRONTEND_URI'] = 'http://localhost:300'
 
 app = Flask(__name__)
 app.config['98449a5d11c5430eb76c8b4d'] = os.urandom(64)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_FILE_DIR'] = './.flask_session/'
+app.config['SPOTIPY_REDIRECT_URI'] = 'https://road2music.herokuapp.com/createplaylist2' #old one: os.environ['SPOTIPY_REDIRECT_URI'] = 'http://localhost:9090'
+app.config['SPOTIPY_CALLBACK_URL'] = 'https://road2music.herokuapp.com/'
+app.config['SPOTIPY_FRONTEND_URI'] = 'http://localhost:300'
 Session(app)
+
 
 # creating caches folder for Spotify
 caches_folder = './.spotify_caches/'
@@ -53,7 +57,7 @@ def createplaylist():
 
     auth_manager = spotipy.oauth2.SpotifyOAuth(os.environ['SPOTIPY_CLIENT_ID'],
                                                 os.environ['SPOTIPY_CLIENT_SECRET'],
-                                                os.environ['SPOTIPY_REDIRECT_URI'],
+                                                app.config['SPOTIPY_REDIRECT_URI'],
                                                 scope='playlist-modify-public',
                                                 cache_path=session_cache_path(),
                                                 show_dialog=True)
