@@ -57,30 +57,15 @@ def createplaylist():
                                                 scope='playlist-modify-public',
                                                 cache_path=session_cache_path(),
                                                 show_dialog=True)
-
-    # Step 3. Being redirected from Spotify auth page
-    if request.args.get("code"):
-       auth_manager.get_access_token(request.args.get("code"))
-       return redirect('https://road2music.herokuapp.com/createplaylist2')
-
     # Step 2. Display sign in link when no token
     if not auth_manager.get_cached_token():
         auth_url = auth_manager.get_authorize_url()
         return render_template('createplaylist.html', signin_url=auth_url) # originally login.html
-
-    # Step 4. Signed in, display data
-    spotify = spotipy.Spotify(auth_manager=auth_manager)
-    post["username"] = spotify.me()["display_name"]
-    post["playlist_src"] = ''
-    playlists = spotify.current_user_playlists()
-    list_playlists = []
-    for playlist in playlists["items"]:
-        print(playlist["owner"]["display_name"])
-        if playlist["owner"]["display_name"] == post["username"]:
-            list_playlists.append(playlist["name"])
-    list_playlists = sorted(list_playlists)
-    return render_template("index_form.html", posts=post,list_playlists = list_playlists)
-
+      
+    # Step 3. Being redirected from Spotify auth page
+    if request.args.get("code"):
+       auth_manager.get_access_token(request.args.get("code"))
+       return redirect('https://road2music.herokuapp.com/createplaylist2')
 
 # Get route details
 # form:
@@ -99,16 +84,7 @@ def createplaylistverify():
     # print("Origin: %s\nDestination: %s\nSelected playlist: %s" % (origin, destination, selected_playlist))
     # auth_manager = spotipy.oauth2.SpotifyOAuth(cache_path=session_cache_path())
     return render_template("index.html", origin = origin_resolved, destination = destination_resolved)
-    if not auth_manager.get_cached_token():
-        return redirect('/createplaylist')
 
-    spotify = spotipy.Spotify(auth_manager=auth_manager)
-
-    username = spotify.current_user()['id']
-    playlist_data = Playlist(origin_resolved, destination_resolved, selected_playlist, spotify, username)
-    playlist_src = "https://open.spotify.com/embed/playlist/" + playlist_data.playlist_id
-    playlist_data.make_roadtrip_playlist()
-    return jsonify({'src':playlist_src, 'playlist':playlist_data.selected_playlist})
 
 # get route & create playlist
 @app.route('/submit', methods=["get"])
